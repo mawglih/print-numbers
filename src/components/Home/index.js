@@ -3,7 +3,7 @@ import styles from './home.css';
 
 const Home = () => {
   return (
-    <div>
+    <div className={styles.container}>
       {'home'}
     </div>
   )
