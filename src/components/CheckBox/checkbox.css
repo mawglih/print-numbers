@@ -35,7 +35,8 @@
 
 .hiddenInput {
   position: absolute;
-  transform: translate(-1000vw);
+  top: 0;
+  left: 0;
 }
 .checkBoxNameLabel {
   display: block;

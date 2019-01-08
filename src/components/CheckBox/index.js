@@ -87,16 +87,14 @@ class Searching extends Component {
         <form className={styles.form}>
           {
             Status.map((el, index) => (
-              <label
+              <div
                 key={el.radio}
-                className={cn(
-                  styles.hiddenInputLabel,
-                )}
               > 
                 <div className={styles.checkDiv}>
                   <div className={cn(
                     styles.box,
                     styles.checkBoxNameLabel,
+                    styles.hiddenInputLabel,
                   )
                   }>
                     <input
@@ -118,6 +116,7 @@ class Searching extends Component {
                     <div className={cn(
                       styles.box2,
                       styles.checkBoxNameLabel,
+                      styles.hiddenInputLabel,
                     )
                     }>
                       <input
@@ -131,14 +130,14 @@ class Searching extends Component {
                         onChange={e => this.handleChange(e)}
                         // checked={value === el.check}
                         value={el.check}
-                        disabled={() => this.getStatus(index)}
+                        disabled={el.disabled}
                       />
                       <span className={styles.checkmark} />
                       {el.check}
                     </div>
                   ) :null }
                 </div>
-              </label>
+              </div>
             ))
           }
         </form>
