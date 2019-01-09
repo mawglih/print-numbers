@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import without from 'lodash/without';
-import castArray from 'lodash/castArray';
+// import without from 'lodash/without';
+// import castArray from 'lodash/castArray';
+import SingleCheckbox from 'components/SingleCheckbox';
 import styles from './checkbox.css';
 
 const Status = [
@@ -91,49 +92,22 @@ class Searching extends Component {
                 key={el.radio}
               > 
                 <div className={styles.checkDiv}>
-                  <div className={cn(
-                    styles.box,
-                    styles.checkBoxNameLabel,
-                    styles.hiddenInputLabel,
-                  )
-                  }>
-                    <input
-                      type="radio"
-                      className={cn(
-                        styles.hiddenInput,
-                        styles.input,
-                        styles.radio,
-                      )}
-                      name="status"
-                      onChange={e => this.handleChange1(e)}
-                      // checked={el.radio}
-                      value={el.radio}
-                    />
-                    <span className={styles.checkmark} />
-                    {el.radio}
-                  </div>
+                  <SingleCheckbox
+                    name={el.radio}
+                    onChange={e => this.handleChange1(e)}
+                    value={el.radio}
+                  />
                   {el.check ? (
                     <div className={cn(
                       styles.box2,
-                      styles.checkBoxNameLabel,
-                      styles.hiddenInputLabel,
                     )
                     }>
-                      <input
-                        type="checkbox"
-                        className={cn(
-                          styles.hiddenInput,
-                          styles.input,
-                          styles.checkbox,
-                        )}
+                      <SingleCheckbox
                         name={el.check}
                         onChange={e => this.handleChange(e)}
-                        // checked={value === el.check}
                         value={el.check}
                         disabled={el.disabled}
                       />
-                      <span className={styles.checkmark} />
-                      {el.check}
                     </div>
                   ) :null }
                 </div>
