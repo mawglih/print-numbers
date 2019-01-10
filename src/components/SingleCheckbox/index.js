@@ -5,7 +5,6 @@ export default ({
   name,
   value,
   onChange,
-  disabled,
 }) => (
     <Fragment>
       <label className={styles.container}>
@@ -15,7 +14,6 @@ export default ({
           className={styles.checkbox}
           value={value}
           onChange={onChange}
-          disabled={disabled}
         />
         <span
           className={styles.checkmark}
