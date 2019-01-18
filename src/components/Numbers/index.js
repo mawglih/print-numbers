@@ -19,6 +19,7 @@ class Searching extends Component {
 
   handleClick = (e) => {
     this.handleChange();
+    
   }
 
   handleChange =  () => {
